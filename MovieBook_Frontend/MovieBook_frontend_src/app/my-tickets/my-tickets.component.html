@@ -1,0 +1,40 @@
+
+<!-- my-tickets.component.html -->
+<div class="page">
+  <h2 class="mb-4 text-center">My Tickets</h2>
+
+  <div class="grid" *ngIf="grouped && grouped.length > 0; else noTickets">
+    <div class="card" *ngFor="let g of grouped">
+      <div class="card-body center-content">
+        <!-- Title -->
+        <h3 class="title">{{ g.movieName }}</h3>
+        <div class="subtle">{{ g.theatreName }}</div>
+
+        <!-- Seats -->
+        <div class="mb-2">
+          <span>Seats:
+            <strong *ngIf="g.seats && g.seats.length > 0">
+              {{ g.seats.join(', ') }}
+            </strong>
+            <strong *ngIf="!g.seats || g.seats.length === 0"> — </strong>
+          </span>
+        </div>
+
+        <!-- Quantity -->
+        <div class="mb-2">
+          <span>Quantity:
+            <strong>{{ g.quantity }}</strong>
+          </span>
+        </div>
+
+        <span class="confirmed">Confirmed</span>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noTickets>
+    <div class="text-center text-muted mt-5">
+      <h5>No tickets booked yet.</h5>
+    </div>
+  </ng-template>
+</div>

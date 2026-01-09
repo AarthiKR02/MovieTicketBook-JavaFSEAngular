@@ -1,0 +1,43 @@
+<div class="add-card add-card--compact">
+  <div class="add-card-body">
+    <h5 class="add-title">Add New Movie</h5>
+
+    <form class="add-form" (ngSubmit)="onSubmit()" #movieForm="ngForm">
+      <div *ngIf="success" class="text-success mb-2">{{ success }}</div>
+      <div *ngIf="error" class="text-danger mb-2">{{ error }}</div>
+      <div class="fields">
+        <input
+          type="text"
+          class="input"
+          placeholder="Movie Name"
+          name="name"
+          [(ngModel)]="name"
+          required
+        />
+
+        <input
+          type="text"
+          class="input"
+          placeholder="Theatre Name"
+          name="theatreName"
+          [(ngModel)]="theatreName"
+          required
+        />
+
+        <input
+          type="number"
+          class="input"
+          placeholder="Total Tickets"
+          name="totalTickets"
+          [(ngModel)]="totalTickets"
+          min="1"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn-primary" [disabled]="loading">
+        {{ loading ? 'Adding...' : 'Add Movie' }}
+      </button>
+    </form>
+  </div>
+</div>

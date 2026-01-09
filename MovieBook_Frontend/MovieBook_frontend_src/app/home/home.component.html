@@ -1,0 +1,63 @@
+<div class="container-fluid homepage">
+  <div *ngIf="info.token; else loggedOut">
+    <br>
+    <div *ngIf="authority === 'user'" class="title mb-3">
+      <h2 class="display-6"><strong>Now showing</strong></h2>
+    </div>
+
+    <div *ngIf="authority === 'admin'" class="title mb-3">
+      <h2 class="display-6"><strong>Admin Dashboard</strong></h2>
+      <span class="text-muted">Manage movies, ticket availability and status</span>
+    </div>
+
+    <div *ngIf="authority === 'admin'">
+        <app-add-movie></app-add-movie>
+
+        <div class="row g-4 align-items-start">
+      <div class="col-12 col-lg-4" *ngIf="!isSearching">
+        <app-admin-movie-list></app-admin-movie-list>
+      </div>
+      </div>
+    </div>
+
+    <!-- Search bar at the top -->
+    <div *ngIf="authority === 'user'" class="row mb-4">
+      <div class="col-12">
+        <app-search-movie (searching)="isSearching = $event"></app-search-movie>
+      </div>
+    
+
+    <!-- Movie list and other content below -->
+    <div class="row g-4 align-items-start">
+      <div class="col-12 col-lg-4" *ngIf="!isSearching">
+        <app-movie-list></app-movie-list>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <ng-template #loggedOut>
+    <div class="container text-center ">
+      <div class="homepage">
+        <br>
+        <h1 style="font-family: comic sans ms;">Movie Ticket Booking</h1>
+        <p className="lead text-muted">MovieBookingApp</p>
+        <br>
+
+        <h6 style="font-family: courier new"><b>Please Login</b></h6>
+        <br>
+        <div class="row">
+          <div class="col-5"></div>
+          <div class="col-5">
+            <app-login></app-login>
+          </div>
+          <div class="col-2"></div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+    </div>
+  </ng-template>

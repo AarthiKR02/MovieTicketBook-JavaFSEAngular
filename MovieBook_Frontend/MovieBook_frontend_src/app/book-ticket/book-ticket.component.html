@@ -1,0 +1,42 @@
+
+<div class="booking-container">
+    <div class="booking-card">
+      <h2><span class="icon">🎟️</span> Select Your Seats</h2>
+      <!-- <p class="subtitle">movieId</p> -->
+      <p class="subtitle" *ngIf="movie">{{ movie.name }} — {{ movie.theatreName }}</p>
+  
+      <div class="form-row">
+        <label>No. of Tickets</label>
+        <!-- This value is derived from selected seats; kept readonly to match your requirement -->
+        <input type="number" [value]="selectedSeats.length" readonly />
+      </div>
+  
+      <!-- Seat row -->
+      <div class="seat-container" role="listbox" aria-label="Seat selection">
+        <button
+          *ngFor="let seat of seats"
+          class="seat"
+          [ngClass]="{
+            selected: seat.status === 'selected',
+            booked: seat.status === 'booked'
+          }"
+          [disabled]="seat.status === 'booked'"
+          (click)="toggleSeat(seat)"
+          [attr.aria-pressed]="seat.status === 'selected'"
+          [attr.aria-label]="seat.label + ' ' + (seat.status === 'booked' ? 'booked' : 'available')"
+        >
+          {{ seat.label }}
+        </button>
+      </div>
+  
+      <button class="confirm-btn" (click)="confirmBooking()">Confirm Booking</button>
+  
+      <div *ngIf="successMsg" class="success-msg">
+        {{ successMsg }}
+      </div>
+      <div *ngIf="errorMsg" class="error-msg">
+        {{ errorMsg }}
+      </div>
+    </div>
+  </div>
+  

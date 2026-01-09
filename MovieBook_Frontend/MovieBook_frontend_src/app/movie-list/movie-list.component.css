@@ -1,0 +1,75 @@
+
+/* Page should occupy the full viewport width and height */
+.page {
+  padding: 24px;
+  margin: 0;               /* remove any default margins */
+  width: 100vw;            /* span full viewport width */
+  min-height: 100vh;       /* optional: ensure full viewport height */
+  box-sizing: border-box;  /* keep padding inside width */
+  overflow-x: hidden;      /* prevent accidental horizontal scroll */
+}
+
+/* Grid should fill its parent and distribute 3 equal columns */
+.grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr); /* equal-width columns across */
+  gap: 24px;
+  align-items: stretch;                  /* make children stretch vertically */
+}
+
+/* Cards should stretch to fill their grid cell */
+.card {
+  width: 75%;           /* fill the grid cell's width */
+  max-width: none;       /* ensure no hidden max width constraints */
+  height: 100%;          /* stretch vertically if needed */
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  border: 1px solid #eef2f7;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-sizing: border-box;
+}
+
+/* Keep content padded inside the card */
+.card-body {
+  padding: 18px 20px;
+  text-align: center;
+  flex: 2;               /* allow content to take up available space */
+}
+
+.status {
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+/* available -> green */
+.status-available {
+  color: #0b6623;           /* dark green text */
+}
+
+/* book asap -> blue */
+.status-asap {
+  color: #0b6623;           /* blue text */
+}
+
+/* sold out -> red */
+.status-soldout {
+  color: #b30b0b;           /* red text */
+}
+
+/* Responsive tweaks stay the same */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

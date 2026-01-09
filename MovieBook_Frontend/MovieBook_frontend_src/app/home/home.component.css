@@ -1,0 +1,20 @@
+
+
+/* Remove outer padding when used inside a grid column */
+:host {
+  display: block;
+}
+
+/* If you had .page { padding: 24px; } earlier, tame it: */
+.page {
+  padding: 0;            /* was 24px — set to 0 when embedded */
+  margin: 0;
+}
+
+/* Keep card/grid styles as-is */
+
+
+.title{
+    text-align: center;
+    font-weight: bold;
+}

@@ -1,0 +1,26 @@
+<div class="page">
+  <div class="grid" *ngIf="!loading && !error">
+    <div class="card" *ngFor="let m of movies">
+      <div class="card-body">
+        <h3 class="title">{{ m.name }}</h3>
+        <div class="subtle">{{ m.theatreName }}</div>
+        <span>Available: <strong>{{ m.totalTickets }}</strong></span>
+        <div class="row">
+          <span class="label">Status:</span>
+          <span class="status"
+            [ngClass]="{
+              'status-available': m.status === 'Available',
+              'status-asap': m.status === 'BOOK ASAP' || m.status === 'ASAP' || m.status === 'book asap',
+              'status-soldout': m.status === 'SOLD OUT' || m.status === 'Sold Out' || m.status === 'sold out'
+            }"
+          >
+            {{ m.status }}
+          </span>
+        </div>
+        <button class="btn btn-primary" 
+        [routerLink]="['/book-ticket', m.id]">
+          Book Now
+        </button>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,17 @@
+/* .updaterecipedetail{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: azure;
+    background-image: url('https://img.freepik.com/free-photo/mexican-sauces-spices_23-2147740811.jpg?size=626&ext=jpg&ga=GA1.1.115949789.1714453266&semt=ais');
+   background-size: 100% 100%;
+   background-attachment: fixed;
+} */
+
+
+.updaterecipedetail{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: azure;
+    background-image: url('https://th.bing.com/th/id/OIP.Gt55Yw2drNDZdo-2ykJ0_AFZC1?w=292&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7');
+    /* background-image: url('https://th.bing.com/th/id/OIP.J7DDE6BF1cUuu8I0ioQyDgAAAA?pid=ImgDet&w=175&h=116&c=7&dpr=1.5'); */
+   background-size: 100% 100%;
+   background-attachment: fixed;
+}

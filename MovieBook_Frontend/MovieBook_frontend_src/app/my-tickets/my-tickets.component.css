@@ -1,0 +1,100 @@
+.card-body.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* override .card-body { text-align: left } */
+  gap: 8px;
+}
+
+
+/* style for the Confirmed label: green text, no bg */
+.confirmed {
+  color: #0b6623;            /* dark green */
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: transparent;   /* ensure no filled background */
+  border: 1px solid rgba(11,102,35,0.08); /* optional subtle outline */
+}
+
+/* make sure small blocks inside card are centered */
+.card-body.center-content .title,
+.card-body.center-content .subtle,
+.card-body.center-content .mb-2,
+.card-body.center-content .stat,
+.card-body.center-content .row {
+  width: auto;
+  display: block;
+  text-align: center;
+}
+
+.page {
+  padding: 2rem;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.card {
+  background: #222;
+  color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  width: 320px;
+  margin-bottom: 1rem;
+}
+
+.card-body {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.subtle {
+  color: #bbb;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat, .row, .mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.label {
+  font-weight: 500;
+  margin-right: 0.5rem;
+}
+
+.status {
+  font-weight: bold;
+}
+
+.badge.bg-success {
+  background-color: #28a745 !important;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .grid {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .card {
+    width: 100%;
+  }
+}

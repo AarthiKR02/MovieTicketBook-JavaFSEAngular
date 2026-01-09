@@ -1,0 +1,91 @@
+
+/* Base card styling */
+.add-card {
+  background: #ffffff;
+  border: 1px solid #eef2f7;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+
+.add-card--compact {
+  max-width: 680px;
+  margin: 24px auto 0; /* 24px top margin, auto left/right */
+}
+
+
+/* Compact size: not full width */
+.add-card--compact {
+  max-width: 680px;      /* adjust: 560px, 640px, 720px, etc. */
+  margin: 0 auto;        /* center the card within its parent */
+}
+
+/* If you prefer left aligned (instead of centered), use:
+.add-card--compact { max-width: 680px; margin: 0; }
+*/
+
+.add-card-body {
+  padding: 16px 18px;
+}
+
+/* Title */
+.add-title {
+  text-align: center;
+  margin: 0 0 12px;
+  font-weight: 700;
+  color: #0f172a; /* slate-900 */
+}
+
+/* Form layout */
+.add-form {
+  display: grid;
+  gap: 12px;
+}
+
+/* Three inputs on one row (for desktop width) */
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+/* Inputs */
+.input {
+  height: 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0 12px;
+  font-size: 14px;
+  color: #0f172a;
+  outline: none;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.input::placeholder { color: #94a3b8; }
+
+.input:focus {
+  border-color: #03a9f4;
+  box-shadow: 0 0 0 3px rgba(3, 169, 244, 0.12);
+}
+
+/* Submit button */
+.btn-primary {
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background-color: #03a9f4; /* teal/blue */
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.05s ease;
+}
+
+.btn-primary:hover { background-color: #0398db; }
+.btn-primary:active { transform: translateY(1px); }
+
+/* Responsive: stack inputs on smaller screens */
+@media (max-width: 768px) {
+  .add-card--compact { max-width: 100%; }  /* optional: full width on mobile */
+  .fields { grid-template-columns: 1fr; }  /* stack inputs vertically */
+}
