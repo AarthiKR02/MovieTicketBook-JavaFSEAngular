@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: cooking.book.CookBookApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 79.484 s - in cooking.book.CookBookApplicationTests

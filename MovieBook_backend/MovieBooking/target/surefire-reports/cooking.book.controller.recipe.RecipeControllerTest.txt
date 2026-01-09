@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: cooking.book.controller.recipe.RecipeControllerTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 5.711 s <<< FAILURE! - in cooking.book.controller.recipe.RecipeControllerTest
+testGetAll(cooking.book.controller.recipe.RecipeControllerTest)  Time elapsed: 5.22 s  <<< ERROR!
+java.lang.NullPointerException: Cannot read the array length because "elementData" is null
+	at cooking.book.controller.recipe.RecipeControllerTest.getRecipeList(RecipeControllerTest.java:75)
+	at cooking.book.controller.recipe.RecipeControllerTest.init(RecipeControllerTest.java:43)
+
+testGetAllByNoOfAccesses(cooking.book.controller.recipe.RecipeControllerTest)  Time elapsed: 0.013 s  <<< ERROR!
+java.lang.NullPointerException: Cannot read the array length because "elementData" is null
+	at cooking.book.controller.recipe.RecipeControllerTest.getRecipeList(RecipeControllerTest.java:75)
+	at cooking.book.controller.recipe.RecipeControllerTest.init(RecipeControllerTest.java:43)
+
